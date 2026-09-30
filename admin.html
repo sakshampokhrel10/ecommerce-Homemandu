@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | HomeMandu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <aside class="dashboard-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <div class="logo-icon" style="background: linear-gradient(135deg, var(--accent-orange), var(--danger-600));">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="brand-name">Home<span>Mandu</span></div>
+    </a>
+
+    <div class="sidebar-menu">
+      <div class="menu-label">Admin Portal</div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" id="nav-dashboard"><i class="fa-solid fa-chart-line"></i> Platform Overview</a></li>
+        <li><a href="#" id="nav-users"><i class="fa-solid fa-users"></i> User Management</a></li>
+        <li><a href="#" id="nav-suppliers"><i class="fa-solid fa-shop"></i> Suppliers <span class="badge" style="margin-left: auto; background: var(--accent-orange); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem;">2 New</span></a></li>
+        <li><a href="#" id="nav-activity"><i class="fa-solid fa-bolt"></i> Activity Log</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar" style="background-color: var(--danger-600);">AD</div>
+      <div class="user-info">
+        <strong>Super Admin</strong>
+        <span>System Operator</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <header class="dashboard-header">
+      <h2 class="header-title" id="pageTitle">Platform Overview</h2>
+      <div class="header-actions">
+        <button class="btn btn-secondary btn-sm" onclick="window.location.href='index.html'"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Site</button>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+      
+      <!-- Dashboard View -->
+      <div id="view-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Total Platform GMV</span>
+              <span class="stat-value">NPR 45.2M</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple"><i class="fa-solid fa-percent"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Commissions Earned</span>
+              <span class="stat-value">NPR 3.8M</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Registered Homeowners</span>
+              <span class="stat-value">8,452</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fa-solid fa-shop-lock"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Active Suppliers</span>
+              <span class="stat-value">1,204</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Recent Platform Activity</h3>
+            <button class="btn btn-secondary btn-sm" onclick="window.AdminApp.switchTab('activity')">View Full Log</button>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Event Type</th>
+                  <th>User / Entity</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody id="adminActivityLog">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Users View -->
+      <div id="view-users" class="hidden">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">User Management</h3>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suppliers View -->
+      <div id="view-suppliers" class="hidden">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Supplier Verification</h3>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Supplier ID</th>
+                  <th>Business Name</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="suppliersTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Activity View -->
+      <div id="view-activity" class="hidden">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Full System Log</h3>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Module</th>
+                  <th>Event Description</th>
+                  <th>Severity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>2 mins ago</td><td>Checkout</td><td>Order HM-948210 placed successfully</td><td><span class="status-badge status-active">Info</span></td></tr>
+                <tr><td>15 mins ago</td><td>User Auth</td><td>New user registration: 9841234567</td><td><span class="status-badge status-active">Info</span></td></tr>
+                <tr><td>1 hour ago</td><td>Supplier Auth</td><td>Failed login attempt SP-201</td><td><span class="status-badge status-pending">Warning</span></td></tr>
+                <tr><td>2 hours ago</td><td>Payments</td><td>eSewa settlement batch completed</td><td><span class="status-badge status-active">Info</span></td></tr>
+                <tr><td>5 hours ago</td><td>System</td><td>API rate limit triggered for Search</td><td><span class="status-badge status-low">Error</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

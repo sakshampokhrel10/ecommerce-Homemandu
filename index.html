@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeMandu | Nepal's Smart Home Building Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="announcement">
+        <span class="badge-tag">NEW</span>
+        <span>Get instant supplier quotes & site delivery across Nepal! GST-ready invoices included.</span>
+      </div>
+      <div class="top-links">
+        <a href="#estimator"><i class="fa-solid fa-calculator"></i> Material Estimator</a>
+        <a href="#why-us"><i class="fa-solid fa-shield-halved"></i> Verified Suppliers</a>
+        <a href="supplier.html"><i class="fa-solid fa-store"></i> Sell on HomeMandu</a>
+        <a href="tel:+977014567890"><i class="fa-solid fa-phone"></i> Support: +977-01-4567890</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-house-chimney-crack"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">Home<span>Mandu</span></span>
+          <span class="brand-tagline">Plan Smart. Build Better.</span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="globalSearchInput" placeholder="Search cement, steel rebar, bricks, pipes, paints...">
+          <button class="search-btn" id="searchSubmitBtn" type="button">Search</button>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#categories" class="nav-link"><i class="fa-solid fa-layer-group"></i> Categories</a>
+        <a href="#catalog" class="nav-link"><i class="fa-solid fa-boxes-stacked"></i> Catalog</a>
+        <a href="#estimator" class="nav-link"><i class="fa-solid fa-calculator"></i> Estimator</a>
+        <a href="#why-us" class="nav-link"><i class="fa-solid fa-circle-check"></i> Why Us</a>
+      </nav>
+
+      <!-- Action Buttons (Cart, Checkout Trigger, Mobile Toggle) -->
+      <div class="nav-actions">
+        <button class="action-btn cart-toggle-btn" id="cartBtn" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-label">Cart</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        
+        <button class="btn btn-primary nav-checkout-btn" id="navCheckoutBtn">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Checkout</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-truck-fast"></i> Nepal's #1 Construction E-Commerce Marketplace
+          </div>
+          <h1 class="hero-title">
+            Build Your Dream Home with <span class="gradient-text">Smart Pricing</span> & Trusted Suppliers
+          </h1>
+          <p class="hero-description">
+            Compare prices from 1,000+ verified hardware shops, calculate exact material requirements, and order building supplies delivered directly to your construction site.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#catalog" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-cart-flatbed"></i> Explore Catalog
+            </a>
+            <a href="#estimator" class="btn btn-secondary btn-lg">
+              <i class="fa-solid fa-calculator"></i> Smart Cost Estimator
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-val">1,200+</span>
+              <span class="metric-lbl">Suppliers Listed</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-val">100%</span>
+              <span class="metric-lbl">Quality Verified</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-val">15,000+</span>
+              <span class="metric-lbl">Site Deliveries</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-val">13%</span>
+              <span class="metric-lbl">Avg. Cost Saved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-banner-visual">
+          <div class="hero-card hero-feature-card">
+            <div class="hero-card-header">
+              <div class="status-indicator">
+                <span class="dot-live"></span>
+                <span>Live Marketplace Feed</span>
+              </div>
+              <span class="badge-pill">Kathmandu Valley & Beyond</span>
+            </div>
+            
+            <div class="quick-compare-box">
+              <div class="compare-row">
+                <div class="prod-thumb">
+                  <i class="fa-solid fa-cubes-stacked"></i>
+                </div>
+                <div class="prod-info">
+                  <strong>Shivam OPC Cement 53 Grade</strong>
+                  <span class="tag-sub">50kg Bag • Grade 53 Certified</span>
+                </div>
+                <div class="prod-pricing">
+                  <span class="price-val">NPR 780</span>
+                  <span class="save-tag">Save 12%</span>
+                </div>
+              </div>
+
+              <div class="compare-row">
+                <div class="prod-thumb rebar">
+                  <i class="fa-solid fa-bars-staggered"></i>
+                </div>
+                <div class="prod-info">
+                  <strong>Jagdamba Fe 500D TMT Rebar</strong>
+                  <span class="tag-sub">12mm - 16mm High Ductile Steel</span>
+                </div>
+                <div class="prod-pricing">
+                  <span class="price-val">NPR 108<small>/kg</small></span>
+                  <span class="save-tag">Bulk Rate</span>
+                </div>
+              </div>
+
+              <div class="compare-row">
+                <div class="prod-thumb brick">
+                  <i class="fa-solid fa-shapes"></i>
+                </div>
+                <div class="prod-info">
+                  <strong>Bhaktapur Chimney Red Bricks</strong>
+                  <span class="tag-sub">Class A • 1st Quality Kiln-fired</span>
+                </div>
+                <div class="prod-pricing">
+                  <span class="price-val">NPR 18<small>/pc</small></span>
+                  <span class="save-tag">Direct Kiln</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-card-footer">
+              <a href="#catalog" class="quick-shop-link">View all 250+ building materials <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="section categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">BROWSE BY TRADE</div>
+          <h2 class="section-title">Explore Product Categories</h2>
+          <p class="section-subtitle">Find everything for your foundation, structure, finishing, and plumbing in one place.</p>
+        </div>
+
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section class="section catalog-section" id="catalog">
+      <div class="container">
+        <div class="section-header flex-header">
+          <div>
+            <div class="section-badge">DIRECT FROM VENDORS</div>
+            <h2 class="section-title">Building Materials Catalog</h2>
+            <p class="section-subtitle">Compare multi-vendor rates, check quality grades, and add to your project cart.</p>
+          </div>
+          <div class="catalog-controls">
+            <div class="filter-pills" id="categoryFilterPills">
+              <!-- Filter pills rendered dynamically -->
+            </div>
+            <div class="sort-selector">
+              <label for="catalogSort"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort:</label>
+              <select id="catalogSort">
+                <option value="popular">Most Popular</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Catalog Product Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state hidden" id="catalogEmptyState">
+          <i class="fa-solid fa-box-open empty-icon"></i>
+          <h3>No products found</h3>
+          <p>Try searching for a different keyword or reset your category filter.</p>
+          <button class="btn btn-secondary" id="resetCatalogFilterBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Cost Calculator Section (HomeMandu Special) -->
+    <section class="section estimator-section" id="estimator">
+      <div class="container">
+        <div class="estimator-card">
+          <div class="estimator-header">
+            <div class="section-badge badge-light">SMART ESTIMATION TOOL</div>
+            <h2>Smart Building Cost Calculator</h2>
+            <p>Calculate approximate material quantities and budget for your home construction project in seconds.</p>
+          </div>
+
+          <div class="estimator-body">
+            <div class="estimator-form-col">
+              <div class="form-group">
+                <label for="houseAreaInput"><i class="fa-solid fa-ruler-combined"></i> Built-up Ground Area (sq. ft.):</label>
+                <input type="number" id="houseAreaInput" value="1200" min="200" max="20000" step="50">
+                <span class="input-hint">Typical single family house in Nepal: 800 - 2,500 sq.ft</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="floorsInput"><i class="fa-solid fa-layer-group"></i> Number of Floors:</label>
+                  <select id="floorsInput">
+                    <option value="1">1 Storey (Bungalow)</option>
+                    <option value="2" selected>2 Storeys</option>
+                    <option value="2.5">2.5 Storeys (Standard)</option>
+                    <option value="3">3 Storeys</option>
+                    <option value="4">4 Storeys</option>
+                  </select>
+                </div>
+
+                <div class="form-group half">
+                  <label for="qualityGradeInput"><i class="fa-solid fa-medal"></i> Finish Quality:</label>
+                  <select id="qualityGradeInput">
+                    <option value="standard" selected>Standard Residential</option>
+                    <option value="premium">Premium Quality</option>
+                    <option value="luxury">Luxury Architectural</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block" id="calculateEstimateBtn">
+                <i class="fa-solid fa-calculator"></i> Calculate Estimates
+              </button>
+              <div class="disclaimer-note">
+                <i class="fa-solid fa-circle-info"></i> Estimates are approximate guidelines based on standard NBC Nepal building codes. Always verify with your structural engineer.
+              </div>
+            </div>
+
+            <div class="estimator-results-col">
+              <h3 class="results-heading"><i class="fa-solid fa-clipboard-list"></i> Estimated Materials Required:</h3>
+              <div class="results-grid" id="estimateResultsGrid">
+                <!-- Calculated dynamically -->
+              </div>
+              <div class="total-cost-banner">
+                <div>
+                  <span class="lbl">Estimated Structural Material Cost:</span>
+                  <div class="val" id="estimatedCostTotal">NPR 2,450,000</div>
+                </div>
+                <button class="btn btn-secondary btn-sm" id="addAllEstimateToCartBtn">
+                  <i class="fa-solid fa-cart-plus"></i> Add Bundle to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why HomeMandu Section -->
+    <section class="section why-section" id="why-us">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">WHY HOMEMANDU</div>
+          <h2 class="section-title">The Modern Way to Build in Nepal</h2>
+          <p class="section-subtitle">Overcoming traditional market challenges with digital transparency and instant pricing.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon icon-blue">
+              <i class="fa-solid fa-shop-lock"></i>
+            </div>
+            <h3>1,000+ Verified Suppliers</h3>
+            <p>Direct access to certified cement plants, rebar rolling mills, and authorized brand distributors across Nepal.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-emerald">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3>Instant Price Comparison</h3>
+            <p>Never get overcharged. Compare real-time quotes side-by-side from multiple hardware shops in your municipal area.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-amber">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <h3>Scheduled Site Delivery</h3>
+            <p>Heavy materials delivered straight to your site at scheduled timings so you never stall your masonry workforce.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-purple">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <h3>GST-Ready Digital Invoices</h3>
+            <p>100% compliant tax invoices for all purchases, simplifying your bank home construction loan disbursements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div class="drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <div class="drawer-title">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Project Cart</h3>
+        <span class="cart-count-pill" id="cartItemsCount">0 items</span>
+      </div>
+      <button class="close-btn" id="closeCartBtn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartItemList">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-summary-breakdown">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">NPR 0</span>
+        </div>
+        <div class="summary-line">
+          <span>Estimated Site Delivery</span>
+          <span id="cartDelivery">NPR 0</span>
+        </div>
+        <div class="summary-line">
+          <span>VAT / Tax (13%)</span>
+          <span id="cartVat">NPR 0</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-line total-line">
+          <span>Total Payable</span>
+          <span id="cartTotal">NPR 0</span>
+        </div>
+      </div>
+
+      <div class="cart-action-buttons">
+        <button class="btn btn-primary btn-block btn-lg" id="proceedToCheckoutBtn">
+          <i class="fa-solid fa-lock"></i> Proceed to Checkout
+        </button>
+        <div class="cart-sub-actions">
+          <button class="btn btn-link text-danger" id="clearCartBtn">
+            <i class="fa-solid fa-trash-can"></i> Clear Cart
+          </button>
+          <a href="#catalog" class="btn btn-link" id="continueShoppingLink">
+            <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Multi-Step Checkout Modal -->
+  <div class="modal-backdrop" id="checkoutModalBackdrop">
+    <div class="modal-card checkout-modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge"><i class="fa-solid fa-shield-halved"></i> 256-Bit Secure Checkout</span>
+          <h2>HomeMandu Site Checkout</h2>
+        </div>
+        <button class="close-btn" id="closeCheckoutBtn" aria-label="Close Checkout">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body checkout-body">
+        <!-- Progress Steps -->
+        <div class="checkout-steps">
+          <div class="step-node active" id="stepNode1">
+            <span class="step-num">1</span>
+            <span class="step-txt">Delivery Site</span>
+          </div>
+          <div class="step-line" id="stepLine1"></div>
+          <div class="step-node" id="stepNode2">
+            <span class="step-num">2</span>
+            <span class="step-txt">Payment & Tax</span>
+          </div>
+          <div class="step-line" id="stepLine2"></div>
+          <div class="step-node" id="stepNode3">
+            <span class="step-num">3</span>
+            <span class="step-txt">Review & Confirm</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Delivery Details -->
+        <div class="checkout-step-content" id="stepContent1">
+          <h4 class="step-title"><i class="fa-solid fa-location-dot"></i> Construction Site & Contact Details</h4>
+          <form id="deliveryForm" class="checkout-form-grid">
+            <div class="form-group">
+              <label for="custName">Full Name *</label>
+              <input type="text" id="custName" placeholder="e.g. Ram Bahadur Thapa" required>
+            </div>
+            <div class="form-group">
+              <label for="custPhone">Phone Number *</label>
+              <input type="tel" id="custPhone" placeholder="e.g. 9841234567" required>
+            </div>
+            <div class="form-group">
+              <label for="custProvince">Province *</label>
+              <select id="custProvince" required>
+                <option value="Bagmati Province" selected>Bagmati Province</option>
+                <option value="Gandaki Province">Gandaki Province</option>
+                <option value="Koshi Province">Koshi Province</option>
+                <option value="Lumbini Province">Lumbini Province</option>
+                <option value="Madhesh Province">Madhesh Province</option>
+                <option value="Sudurpashchim Province">Sudurpashchim Province</option>
+                <option value="Karnali Province">Karnali Province</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="custCity">City / Municipality *</label>
+              <input type="text" id="custCity" placeholder="e.g. Lalitpur, Mahalaxmi-4" required>
+            </div>
+            <div class="form-group full-width">
+              <label for="custAddress">Detailed Site Landmark / Address *</label>
+              <input type="text" id="custAddress" placeholder="e.g. Near Siddhi Ganesh Temple, Plot #42, Imadol" required>
+            </div>
+            <div class="form-group full-width">
+              <label for="custDeliveryDate">Preferred Delivery Date</label>
+              <input type="date" id="custDeliveryDate">
+            </div>
+            <div class="form-group full-width">
+              <label for="custNotes">Truck Access / Unloading Instructions</label>
+              <textarea id="custNotes" rows="2" placeholder="e.g. Narrow road entry, 6-wheeler truck allowed only after 8 PM..."></textarea>
+            </div>
+          </form>
+          <div class="step-actions">
+            <div></div>
+            <button class="btn btn-primary" id="toStep2Btn">
+              Next: Payment Method <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Details -->
+        <div class="checkout-step-content hidden" id="stepContent2">
+          <h4 class="step-title"><i class="fa-solid fa-wallet"></i> Select Payment & Invoicing Method</h4>
+          
+          <div class="payment-methods-grid">
+            <label class="payment-method-card">
+              <input type="radio" name="paymentMethod" value="Credit Card">
+              <div class="payment-card-inner">
+                <div class="pay-badge blue" style="background:#0284c7;">Card</div>
+                <strong>Credit / Debit Card</strong>
+                <span>Visa, Mastercard & Domestic</span>
+              </div>
+            </label>
+
+            <label class="payment-method-card selected">
+              <input type="radio" name="paymentMethod" value="eSewa" checked>
+              <div class="payment-card-inner">
+                <div class="pay-badge green">eSewa</div>
+                <strong>eSewa Digital Wallet</strong>
+                <span>Instant confirmation & cash back</span>
+              </div>
+            </label>
+
+            <label class="payment-method-card">
+              <input type="radio" name="paymentMethod" value="Khalti">
+              <div class="payment-card-inner">
+                <div class="pay-badge purple">Khalti</div>
+                <strong>Khalti Digital Wallet</strong>
+                <span>Quick QR payment</span>
+              </div>
+            </label>
+
+            <label class="payment-method-card">
+              <input type="radio" name="paymentMethod" value="FonePay / Bank Transfer">
+              <div class="payment-card-inner">
+                <div class="pay-badge red">Bank / Fonepay</div>
+                <strong>Bank Transfer / FonePay</strong>
+                <span>Direct corporate / SME bank transfer</span>
+              </div>
+            </label>
+
+            <label class="payment-method-card">
+              <input type="radio" name="paymentMethod" value="Cash on Delivery">
+              <div class="payment-card-inner">
+                <div class="pay-badge blue">COD</div>
+                <strong>Cash On Site Delivery</strong>
+                <span>Pay upon material inspection at site</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="invoice-opt-box">
+            <label class="checkbox-label">
+              <input type="checkbox" id="requirePanInvoice" checked>
+              <span><strong>Issue Official GST/PAN Tax Invoice</strong> (Essential for construction loans)</span>
+            </label>
+            <div class="form-group pan-field" id="panFieldGroup">
+              <label for="custPan">Buyer PAN / VAT Number (Optional)</label>
+              <input type="text" id="custPan" placeholder="e.g. 601234567">
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button class="btn btn-secondary" id="backToStep1Btn">
+              <i class="fa-solid fa-arrow-left"></i> Back to Site Info
+            </button>
+            <button class="btn btn-primary" id="toStep3Btn">
+              Next: Review Order <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Order Review -->
+        <div class="checkout-step-content hidden" id="stepContent3">
+          <h4 class="step-title"><i class="fa-solid fa-list-check"></i> Review Project Order & Confirm</h4>
+          
+          <div class="order-review-container">
+            <div class="review-block">
+              <h5><i class="fa-solid fa-truck"></i> Delivery To:</h5>
+              <p id="reviewDeliveryInfo">Lalitpur, Mahalaxmi-4 • Ram Bahadur Thapa (9841234567)</p>
+            </div>
+
+            <div class="review-block">
+              <h5><i class="fa-solid fa-credit-card"></i> Payment Method:</h5>
+              <p id="reviewPaymentInfo">eSewa Digital Wallet (GST Invoice Requested)</p>
+            </div>
+
+            <div class="review-items-table-wrapper">
+              <h5>Items in this Order:</h5>
+              <table class="review-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Supplier</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th class="text-right">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody id="reviewTableBody">
+                  <!-- Filled dynamically -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="review-grand-total">
+              <div class="total-row">
+                <span>Items Subtotal:</span>
+                <span id="reviewSubtotal">NPR 0</span>
+              </div>
+              <div class="total-row">
+                <span>Site Transport & Logistics:</span>
+                <span id="reviewDelivery">NPR 0</span>
+              </div>
+              <div class="total-row">
+                <span>Government VAT (13%):</span>
+                <span id="reviewVat">NPR 0</span>
+              </div>
+              <div class="total-row highlight">
+                <span>Net Total Payable:</span>
+                <span id="reviewGrandTotal">NPR 0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-actions">
+            <button class="btn btn-secondary" id="backToStep2Btn">
+              <i class="fa-solid fa-arrow-left"></i> Back to Payment
+            </button>
+            <button class="btn btn-success btn-lg" id="confirmOrderBtn">
+              <i class="fa-solid fa-check-circle"></i> Confirm & Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MPIN Security Modal -->
+  <div class="modal-backdrop" id="mpinModalBackdrop" style="z-index: 1000;">
+    <div class="modal-card" style="max-width: 400px; text-align: center; padding: 2rem;">
+      <div class="modal-header" style="justify-content:center; border:none; padding-bottom:0;">
+        <div style="font-size:3rem; color:var(--primary-600); margin-bottom:1rem;"><i class="fa-solid fa-shield-halved"></i></div>
+        <button class="close-btn" id="closeMpinBtn" aria-label="Close MPIN" style="position:absolute; top:1rem; right:1rem;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: left;">
+        <h2 style="margin-bottom:0.5rem; text-align:center;">Secure Payment</h2>
+        <p style="margin-bottom:1.5rem;color:var(--slate-600); text-align:center;">Authorize payment via <strong id="mpinPaymentMethodName">Wallet</strong>.</p>
+        
+        <div class="form-group" id="walletPhoneGroup" style="margin-bottom: 1.5rem;">
+          <label for="walletPhoneInput" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Registered Mobile Number</label>
+          <input type="tel" id="walletPhoneInput" placeholder="e.g. 9841234567" style="width: 100%; padding: 0.75rem; border: 1px solid var(--slate-300); border-radius: var(--radius-md); font-size: 1rem;">
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; text-align:center;">Enter 4-Digit PIN</label>
+        <div style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1.5rem;" id="mpinInputs">
+          <input type="password" maxlength="1" class="mpin-digit" style="width:50px; height:60px; font-size:2rem; text-align:center; border:2px solid var(--slate-300); border-radius:var(--radius-md);">
+          <input type="password" maxlength="1" class="mpin-digit" style="width:50px; height:60px; font-size:2rem; text-align:center; border:2px solid var(--slate-300); border-radius:var(--radius-md);">
+          <input type="password" maxlength="1" class="mpin-digit" style="width:50px; height:60px; font-size:2rem; text-align:center; border:2px solid var(--slate-300); border-radius:var(--radius-md);">
+          <input type="password" maxlength="1" class="mpin-digit" style="width:50px; height:60px; font-size:2rem; text-align:center; border:2px solid var(--slate-300); border-radius:var(--radius-md);">
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" id="verifyMpinBtn">Verify & Pay</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supplier Price Comparison Modal -->
+  <div class="modal-backdrop" id="compareModalBackdrop">
+    <div class="modal-card compare-modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge"><i class="fa-solid fa-scale-balanced"></i> Multi-Supplier Quote Comparison</span>
+          <h2 id="compareModalTitle">Supplier Quotes Comparison</h2>
+        </div>
+        <button class="close-btn" id="closeCompareBtn" aria-label="Close Comparison">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="compare-desc">Compare verified suppliers offering this material, check customer feedback, delivery lead times, and pick the best deal for your budget.</p>
+        <div class="supplier-quotes-list" id="supplierQuotesList">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success & Invoice Confirmation Modal -->
+  <div class="modal-backdrop" id="successModalBackdrop">
+    <div class="modal-card success-modal-card">
+      <div class="modal-body text-center success-body">
+        <div class="success-icon-bubble">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>Order Successfully Placed!</h2>
+        <p class="order-id-badge">Order ID: <strong id="confirmedOrderId">HM-948210</strong></p>
+        <p class="success-msg">Your materials order has been dispatched to suppliers. You will receive a verification SMS and dispatch tracking update shortly.</p>
+        
+        <div class="success-invoice-box" id="successInvoiceBox">
+          <!-- Invoice summary rendered dynamically -->
+        </div>
+
+        <div class="success-actions">
+          <button class="btn btn-primary" id="printInvoiceBtn">
+            <i class="fa-solid fa-print"></i> Print Invoice
+          </button>
+          <button class="btn btn-secondary" id="closeSuccessModalBtn">
+            <i class="fa-solid fa-arrow-left"></i> Return to Store
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-house-chimney-crack"></i>
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">Home<span>Mandu</span></span>
+            <span class="brand-tagline">Plan Smart. Build Better.</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Nepal's Smart Home Building Marketplace connecting homeowners, contractors, engineers, and suppliers with transparent pricing and hassle-free site delivery.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation Links</h4>
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Product Categories</a></li>
+          <li><a href="#catalog">Building Materials Catalog</a></li>
+          <li><a href="javascript:void(0)" onclick="window.HomeManduApp.openCart()">Shopping Cart (<span class="footer-cart-count">0</span>)</a></li>
+          <li><a href="javascript:void(0)" onclick="window.HomeManduApp.openCheckout()">Checkout Page</a></li>
+          <li><a href="#estimator">Material Cost Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Material Categories</h4>
+        <ul class="footer-nav">
+          <li><a href="#catalog">Cement & Aggregates</a></li>
+          <li><a href="#catalog">TMT Rebar & Steel</a></li>
+          <li><a href="#catalog">Clay & AAC Bricks</a></li>
+          <li><a href="#catalog">Pipes & Plumbing</a></li>
+          <li><a href="#catalog">Electrical Wiring</a></li>
+          <li><a href="#catalog">Exterior & Interior Paints</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Headquarters</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Tinkune, Kathmandu, Nepal</p>
+        <p><i class="fa-solid fa-phone"></i> +977-01-4567890 / 9801234567</p>
+        <p><i class="fa-solid fa-envelope"></i> contact@homemandu.com.np</p>
+        <div class="payment-badges">
+          <span>Accepted:</span>
+          <div class="pay-icons">
+            <span class="pay-pill">eSewa</span>
+            <span class="pay-pill">Khalti</span>
+            <span class="pay-pill">Fonepay</span>
+            <span class="pay-pill">COD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>&copy; 2026 HomeMandu Inc. Milisha Sapkota & Saksham Pokhrel. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="supplier.html">Supplier Terms</a>
+          <a href="admin.html" style="color:var(--slate-500)">Admin Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

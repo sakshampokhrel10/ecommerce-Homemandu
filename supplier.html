@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplier Panel | HomeMandu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <aside class="dashboard-sidebar">
+    <a href="index.html" class="sidebar-brand">
+      <div class="logo-icon">
+        <i class="fa-solid fa-house-chimney-crack"></i>
+      </div>
+      <div class="brand-name">Home<span>Mandu</span></div>
+    </a>
+
+    <div class="sidebar-menu">
+      <div class="menu-label">Supplier Panel</div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" id="nav-dashboard"><i class="fa-solid fa-chart-pie"></i> Overview</a></li>
+        <li><a href="#" id="nav-orders"><i class="fa-solid fa-box-open"></i> Orders <span class="badge" style="margin-left: auto; background: var(--danger-500); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem;">3</span></a></li>
+        <li><a href="#" id="nav-inventory"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+        <li><a href="#" id="nav-wallet"><i class="fa-solid fa-wallet"></i> Wallet & P2P</a></li>
+        <li><a href="#" id="nav-payouts"><i class="fa-solid fa-money-bill-transfer"></i> Payouts</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar">KS</div>
+      <div class="user-info">
+        <strong>KTM Supplies Hub</strong>
+        <span>Supplier ID: SP-4092</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <header class="dashboard-header">
+      <h2 class="header-title" id="pageTitle">Overview</h2>
+      <div class="header-actions">
+        <button class="btn btn-secondary btn-sm" onclick="window.location.href='index.html'"><i class="fa-solid fa-store"></i> View Store</button>
+        <button class="icon-btn">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge">3</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+      
+      <!-- Dashboard View -->
+      <div id="view-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-sack-dollar"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">This Month's Sales</span>
+              <span class="stat-value">NPR 1,245,000</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fa-solid fa-boxes-packing"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Pending Orders</span>
+              <span class="stat-value">12</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Orders Delivered</span>
+              <span class="stat-value">84</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="stat-details">
+              <span class="stat-title">Low Stock Items</span>
+              <span class="stat-value">3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Recent Orders</h3>
+            <button class="btn btn-secondary btn-sm" onclick="window.SupplierApp.switchTab('orders')">View All</button>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer / Site</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardRecentOrders">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orders View -->
+      <div id="view-orders" class="hidden">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Manage Orders</h3>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Items</th>
+                  <th>Customer Details</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventory View -->
+      <div id="view-inventory" class="hidden">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h3 class="data-card-title">Inventory Management</h3>
+            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Product</button>
+          </div>
+          <div class="data-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Unit Price (NPR)</th>
+                  <th>Stock Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="inventoryTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wallet & P2P View -->
+      <div id="view-wallet" class="hidden">
+        <div class="stats-grid">
+          <div class="stat-card" style="background: linear-gradient(135deg, var(--primary-600), var(--primary-900)); color: white; border:none; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);">
+            <div class="stat-icon" style="background: rgba(255,255,255,0.2); color: white;"><i class="fa-solid fa-wallet"></i></div>
+            <div class="stat-details">
+              <span class="stat-title" style="color: rgba(255,255,255,0.8);">Available Wallet Balance</span>
+              <span class="stat-value" style="color: white;" id="walletBalanceDisplay">NPR 450,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: start;">
+          <!-- Transfer Form -->
+          <div class="data-card">
+            <div class="data-card-header">
+              <h3 class="data-card-title">Send Money (P2P)</h3>
+            </div>
+            <div style="padding: 1.5rem;">
+              <form id="p2pTransferForm">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <label for="p2pRecipient" style="display:block; margin-bottom:0.5rem; font-weight:600;">Recipient Wallet ID / Phone</label>
+                  <input type="text" id="p2pRecipient" placeholder="e.g. 9841234567 or HM-992" style="width:100%; padding:0.75rem; border:1px solid var(--slate-300); border-radius:var(--radius-md);" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <label for="p2pAmount" style="display:block; margin-bottom:0.5rem; font-weight:600;">Transfer Amount (NPR)</label>
+                  <input type="number" id="p2pAmount" placeholder="0" min="10" max="1000000" style="width:100%; padding:0.75rem; border:1px solid var(--slate-300); border-radius:var(--radius-md);" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                  <label for="p2pRemarks" style="display:block; margin-bottom:0.5rem; font-weight:600;">Remarks (Optional)</label>
+                  <input type="text" id="p2pRemarks" placeholder="What's this for?" style="width:100%; padding:0.75rem; border:1px solid var(--slate-300); border-radius:var(--radius-md);">
+                </div>
+                <button type="button" class="btn btn-primary btn-block" id="initiateP2PBtn" style="width:100%; padding:0.8rem; font-weight:bold;"><i class="fa-solid fa-paper-plane"></i> Send Money</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Recent Transfers -->
+          <div class="data-card">
+            <div class="data-card-header">
+              <h3 class="data-card-title">Recent P2P Transactions</h3>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Details</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="p2pHistoryBody">
+                  <tr>
+                    <td>Oct 10, 2026</td>
+                    <td><span class="status-badge" style="background:#fef2f2; color:var(--danger-600); border:none;">Sent</span></td>
+                    <td>To: Rajesh Hamal (9812345678)<br><small style="color:var(--slate-500)">Logistics payment</small></td>
+                    <td><strong>- NPR 12,000</strong></td>
+                    <td><span class="status-badge status-active">Success</span></td>
+                  </tr>
+                  <tr>
+                    <td>Oct 08, 2026</td>
+                    <td><span class="status-badge" style="background:#ecfdf5; color:var(--success-600); border:none;">Received</span></td>
+                    <td>From: HomeMandu Payouts<br><small style="color:var(--slate-500)">Weekly Settlement</small></td>
+                    <td><strong>+ NPR 145,000</strong></td>
+                    <td><span class="status-badge status-active">Success</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="supplier.js"></script>
+</body>
+</html>
